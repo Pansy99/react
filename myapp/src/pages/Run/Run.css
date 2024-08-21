@@ -1,0 +1,9 @@
+body{
+    background-color: bisque
+}
+.aa{
+   width:200px;
+   height: 100px;
+   background-image:url(../../static/images/bear.jpg);
+   background-position: -200px  0;
+}

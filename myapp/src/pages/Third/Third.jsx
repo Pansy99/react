@@ -52,7 +52,7 @@ function Third() {
     return (
       
             <div 
-                style={{overflow:'hidden'}}
+              style={{overflow:'hidden'}}
                 className="container">
                 <img
                     className="ip"

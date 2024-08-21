@@ -8,7 +8,7 @@ import Loading from './pages/Loading.jsx';
 import Bpp from './pages/Bpp.jsx';
 import Cpp from './pages/Cpp.jsx';
 import Third  from './pages/Third/Third.jsx';
-
+import Run from '../src/pages/Run/Run.jsx'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
