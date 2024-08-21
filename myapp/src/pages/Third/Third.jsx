@@ -12,46 +12,47 @@ function Third() {
     const [position, setPosition] = useState({ x: 430, y: 300 });
     const elementRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [startY, setStartY] = useState(0);
+    const [startX, setStartX] = useState(430);
+    const [startY, setStartY] = useState(300);
 
     const [doorSrc, setDoorSrc] = useState(src2)
 
     const handleTouchStart = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        setIsDragging(true);
-        const touch = e.touches[0];
-        setStartX(touch.clientX - elementRef.current.offsetLeft);
-        setStartY(touch.clientY - elementRef.current.offsetTop);
-    }
+       
+            e.stopPropagation();
+            setIsDragging(true);
+            const touch = e.touches[0];
+            setStartX(touch.clientX - elementRef.current.offsetLeft);
+            setStartY(touch.clientY - elementRef.current.offsetTop);
+  
+    };
 
     const handleTouchMove = (e) => {
-        e.preventDefault()
-      e.stopPropagation()
-        if (isDragging) {
+       
+            e.stopPropagation();
             const touch = e.touches[0];
             const newPosition = { x: touch.clientX - startX, y: touch.clientY - startY };
             setPosition(newPosition);
-          
+
             if (newPosition.y <= 170) {
                 setDoorSrc(src3);
             } else {
                 setDoorSrc(src2);
             }
         }
-    }
+  
 
     const handleTouchEnd = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-
-        setIsDragging(false);
-    }
+ 
+            e.stopPropagation();
+            setIsDragging(false);
+  
+    };
 
     return (
-        <div >
-            <div    
+      
+            <div 
+                style={{overflow:'hidden'}}
                 className="container">
                 <img
                     className="ip"
@@ -59,20 +60,22 @@ function Third() {
                 <img 
                     className="light"
                     src={src1} alt="light"  height="300px" />
+                
                 <img 
-                    ref={elementRef}
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
-                    style={{position:"absolute",left:position.x,
-                        top:position.y}}
+                       ref={elementRef}
+                       onTouchStart={handleTouchStart}
+                       onTouchMove={handleTouchMove}
+                       onTouchEnd={handleTouchEnd}
+                       style={{position:"absolute",left:position.x,
+                           top:position.y}}
                     className="flag1" src={src5} height="60px"/>
+                
                 <img 
                     width="180px"
                     className="door"
                     src={doorSrc}  />
             </div>
-        </div>
+  
     )
 }
 export default Third;
