@@ -1,0 +1,22 @@
+.epp{
+
+    width: 800px;
+    height: 380px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pact{
+    margin-top: 100px;
+    width: 100px;
+    height: 50px;
+    background-color:skyblue;
+}
+.description{
+    margin-top: 100px;
+    width: 100px;
+    height: 50px;
+    background-color:pink;
+}
